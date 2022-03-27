@@ -1,0 +1,46 @@
+tags:
+- name: Steam inventory service
+  description: steam API
+
+paths:
+  /steam/inventory/user:
+    post:
+      tags:
+      - steam
+      summary: get user inventory
+      parameters:
+      - userId: id
+        in: path
+        description: user Id
+        required: true
+        type: integer
+      - name: body
+        in: body
+        description: user Data
+        required: true
+        schema:
+          $ref: '#/definitions/users'
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Server Error'
+ 
+# definitions
+definitions:
+  users:
+    type: object
+    required:
+        - userId
+        - isTradable
+    properties:
+      userId:
+        type: string
+        description: user Steam Id
+      isTradable:
+        type: boolean
+        description: sorted a tradable
+
+schemes:
+ - https
+ - http

@@ -1,0 +1,13 @@
+{
+    "env": "development",
+    "secretKey": "secretKey",
+    "port":3000,
+    "log": {
+        "format": "dev",
+        "dir": "../logs"
+    },
+    "cors": {
+        "origin": true,
+        "credentials": true
+    }
+}
